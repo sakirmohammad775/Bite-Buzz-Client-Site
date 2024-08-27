@@ -3,7 +3,7 @@
 const Navbar = () => {
     return (
         <>
-            <div className="navbar bg-base-100">
+                <div className="navbar fixed z-30 bg-opacity-30 max-w-screen-xl bg-black text-white">
                 <div className="flex-1">
                     <a className="btn btn-ghost text-xl">daisyUI</a>
                 </div>
