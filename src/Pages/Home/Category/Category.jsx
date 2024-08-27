@@ -31,7 +31,6 @@ const Category = () => {
       
       </Swiper>
       </section>
-      <h3></h3>
     </>
     );
 };
