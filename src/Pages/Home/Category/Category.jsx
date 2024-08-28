@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import SectionTitle from '../../../Components/SectionTitle/SectionTitle'
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -13,6 +13,7 @@ const Category = () => {
     return (
         <>
       <section>
+        <SectionTitle heading={"From 11.00am to 10.00pm"}></SectionTitle>
       <Swiper
         slidesPerView={4}
         centeredSlides={true}
