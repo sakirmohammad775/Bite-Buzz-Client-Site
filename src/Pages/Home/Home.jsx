@@ -1,12 +1,8 @@
-
-
-import Footer from "../../Components/Footer/Footer";
-import Banner from "./Banner";
-import Category from "./Category/Category";
-import Featured from "./Featured/Featured";
-import PopularMenu from "./PopularMenu/PopularMenu";
-
-
+import React from 'react';
+import Banner from './Banner/Banner';
+import PopularMenu from "../../Pages/Home/PopularMenu/PopularMenu"
+import Featured from "../../Pages/Home/Featured/Featured"
+import Category from "../../Pages/Home/Category/Category"
 const Home = () => {
     return (
         <>
@@ -14,7 +10,6 @@ const Home = () => {
         <Category></Category>
         <PopularMenu></PopularMenu>
         <Featured></Featured>
-        <Footer></Footer>
         </>
     );
 };
