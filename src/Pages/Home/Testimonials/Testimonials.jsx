@@ -1,28 +1,31 @@
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
+import { useEffect, useState } from 'react';
 
 const Testimonials = () => {
+    const [reviews, setReviews] = useState([])
+    useEffect(() => {
+        fetch('reviews.json')
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    },[])
     return (
-        <>
-         <section>
-        <SectionTitle heading={"Order Online"} subHeading={"From 11.00am to 10.00pm"}></SectionTitle>
-      <Swiper
-        slidesPerView={4}
-        centeredSlides={true}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper"
-      >
-        <SwiperSlide><img src={Slide1} alt="" /><h3 className='text-4xl uppercase text-center text-white -mt-12'>Salads</h3></SwiperSlide>
-        <SwiperSlide><img src={Slide2} alt="" /><h3 className='text-4xl uppercase text-center text-white -mt-12'>Pizzas</h3></SwiperSlide>
-        <SwiperSlide><img src={Slide3} alt="" /><h3 className='text-4xl uppercase text-center text-white -mt-12'>Soups</h3></SwiperSlide>
-        <SwiperSlide><img src={Slide4} alt="" /><h3 className='text-4xl uppercase text-center text-white -mt-12'>Desserts</h3></SwiperSlide>
-        <SwiperSlide><img src={Slide5} alt="" /><h3 className='text-4xl uppercase text-center text-white -mt-12'>Fruits</h3></SwiperSlide>
-      
-      </Swiper>
-      </section>
+        <><Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+
+            {reviews.map(review =>
+                <SwiperSlide key={review._id}>
+
+                    <div>
+                        <p>{review.details}
+                        </p>
+                    </div>
+                </SwiperSlide>)}
+
+
+
+        </Swiper>
         </>
     );
 };
