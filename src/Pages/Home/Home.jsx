@@ -1,5 +1,6 @@
 
 
+import Footer from "../../Components/Footer/Footer";
 import Banner from "./Banner";
 import Category from "./Category/Category";
 import Featured from "./Featured/Featured";
@@ -13,6 +14,7 @@ const Home = () => {
         <Category></Category>
         <PopularMenu></PopularMenu>
         <Featured></Featured>
+        <Footer></Footer>
         </>
     );
 };
