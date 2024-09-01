@@ -2,7 +2,7 @@ import Cover from "../Cover/Cover";
 import MenuItem from "../MenuItem/MenuItem";
 
 
-const MenuCategory = ({items,title,coverImg}) => {
+const MenuCategory = ({items,title,img}) => {
     return (
         <>
         <div className="grid md:grid-cols-2 gap-10">
