@@ -19,8 +19,12 @@ const Menu = () => {
             <Helmet>
                 <title>BiteBuzz | Menu</title>
             </Helmet>
-           
+
+        {/* main cover */}
+            <Cover img={MenuImg} title={'Our Menu'}></Cover>
             <SectionTitle subHeading={"Don't Miss"} heading={"Today's Offer"}></SectionTitle>
+
+            {/* offered menu items */}
             <MenuCategory items={dessert}></MenuCategory>
         </>
     );
