@@ -1,10 +1,13 @@
 import { Helmet } from "react-helmet-async";
 import Cover from "../Shared/Cover/Cover";
-import MenuImg from "../../assets/menu/banner3.jpg"
-import PopularMenu from "../Home/PopularMenu/PopularMenu";
 import UseMenu from "../../Hooks/UseMenu";
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import MenuCategory from "../Shared/MenuCategory/MenuCategory";
+import MenuImg from "../../assets/menu/banner3.jpg"
+import MenuImg from "../../assets/menu/banner3.jpg"
+import MenuImg from "../../assets/menu/banner3.jpg"
+import MenuImg from "../../assets/menu/banner3.jpg"
+import MenuImg from "../../assets/menu/banner3.jpg"
 
 //for dynamic page title change using react helmet
 const Menu = () => {
