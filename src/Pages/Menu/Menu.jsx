@@ -1,9 +1,13 @@
+import { Helmet } from "react-helmet-async";
 
+//for dynamic page title change using react helmet
 const Menu = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+        <Helmet>
+            <title>Menu</title>
+        </Helmet>
+        </>
     );
 };
 
