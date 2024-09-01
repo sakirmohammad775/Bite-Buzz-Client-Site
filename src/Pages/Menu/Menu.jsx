@@ -4,10 +4,10 @@ import UseMenu from "../../Hooks/UseMenu";
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import MenuCategory from "../Shared/MenuCategory/MenuCategory";
 import MenuImg from "../../assets/menu/banner3.jpg"
-import MenuImg from "../../assets/menu/banner3.jpg"
-import MenuImg from "../../assets/menu/banner3.jpg"
-import MenuImg from "../../assets/menu/banner3.jpg"
-import MenuImg from "../../assets/menu/banner3.jpg"
+import DessertImg from "../../assets/menu/dessert-bg.jpeg"
+import SoupImg from "../../assets/menu/soup-bg.jpg"
+import SaladImg from "../../assets/menu/salad-bg.jpg"
+import PizzaImg from "../../assets/menu/pizza-bg.jpg"
 
 //for dynamic page title change using react helmet
 const Menu = () => {
@@ -28,7 +28,7 @@ const Menu = () => {
             <SectionTitle subHeading={"Don't Miss"} heading={"Today's Offer"}></SectionTitle>
 
             {/* offered menu items */}
-            <MenuCategory items={dessert}></MenuCategory>
+            <MenuCategory items={dessert} title={"Dessert"} img={DessertImg} ></MenuCategory>
         </>
     );
 };
