@@ -8,10 +8,13 @@ const Order = () => {
     return (
         <>
             <Cover img={CoverImg} title={"OUR SHOP"}></Cover>
-            <Tabs defaultIndex={1} onSelect={(index)}>
+            <Tabs className="text-center items-center" defaultIndex={tabIndex} onSelect={(index)}>
                 <TabList>
                     <Tab>Pizza</Tab>
-                    <Tab>Title 2</Tab>
+                    <Tab>Salad</Tab>
+                    <Tab>Soup</Tab>
+                    <Tab>Dessert</Tab>
+                    <Tab>Drinks</Tab>
                 </TabList>
 
                 <TabPanel>
