@@ -8,7 +8,7 @@ const Order = () => {
     return (
         <>
             <Cover img={CoverImg} title={"OUR SHOP"}></Cover>
-            <Tabs className="text-center items-center" defaultIndex={tabIndex} onSelect={(index)}>
+            <Tabs className="text-center items-center" defaultIndex={tabIndex} onSelect={(index)=>setTabIndex(Index)}>
                 <TabList>
                     <Tab>Pizza</Tab>
                     <Tab>Salad</Tab>
@@ -17,12 +17,12 @@ const Order = () => {
                     <Tab>Drinks</Tab>
                 </TabList>
 
-                <TabPanel>
-                    <h2>Any content 1</h2>
-                </TabPanel>
-                <TabPanel>
-                    <h2>Any content 2</h2>
-                </TabPanel>
+                <TabPanel><h2>Any content 1</h2> </TabPanel>
+                <TabPanel><h2>Any content 1</h2> </TabPanel>
+                <TabPanel><h2>Any content 1</h2> </TabPanel>
+                <TabPanel><h2>Any content 1</h2> </TabPanel>
+                <TabPanel><h2>Any content 1</h2> </TabPanel>
+                
             </Tabs>
         </>
     );
