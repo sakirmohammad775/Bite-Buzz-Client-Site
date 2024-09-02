@@ -1,10 +1,10 @@
-
-
+import CoverImg from "../../assets/shop/banner2.jpg"
+import Cover from "../Shared/Cover/Cover"
 const Order = () => {
     return (
-        <div>
-            <h3>gioo</h3>
-        </div>
+        <>
+        <Cover img={CoverImg}></Cover>
+        </>
     );
 };
 
