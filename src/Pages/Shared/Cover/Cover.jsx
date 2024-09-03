@@ -1,4 +1,5 @@
 import { Parallax } from "react-parallax";
+import { Link } from "react-router-dom";
 
 
 
@@ -18,7 +19,7 @@ const Cover = ({ img, title,details }) => {
                         <div className="max-w-md">
                             <h1 className="mb-5 text-5xl font-bold">{title}</h1>
                             <p className="mb-5">{details}</p>
-                            <button className="btn btn-primary">Explore</button>
+                            <Link to={`/order/${title}`}><button className='btn btn-outline border-0 text-xl border-b-4 mt-5 text-white'>Order Your Favourite Food</button></Link>
                         </div>
                     </div>
                 </div>
