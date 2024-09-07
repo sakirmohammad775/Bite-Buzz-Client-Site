@@ -30,7 +30,9 @@ const Testimonials = () => {
                             <h3 className='text-2xl text-orange-400'>{review.name}</h3>
                         </div>
        <div>
-       
+        <h4 className='text-4xl items-center font-thin'>
+            ht is the liquaid hangsterll 
+        </h4>
        </div>
 
                     </SwiperSlide>)}
