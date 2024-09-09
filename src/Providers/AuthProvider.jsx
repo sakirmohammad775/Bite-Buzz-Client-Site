@@ -49,4 +49,4 @@ return (
         {children}
     </AuthContext.Provider>
 )}
-export default AuthProvider
+export default AuthContext
