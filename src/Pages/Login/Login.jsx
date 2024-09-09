@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { LoadCanvasTemplate, loadCaptchaEnginge, validateCaptcha } from 'react-simple-captcha';
-import AuthContext from '../../Providers/AuthProvider';
+import { AuthContext } from '../../Providers/AuthProvider';
+
 
 const Login = () => {
     const captchaRef=useRef(null)
