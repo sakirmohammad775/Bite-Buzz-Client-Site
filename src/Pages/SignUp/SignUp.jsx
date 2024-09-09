@@ -22,19 +22,22 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" placeholder="Name" name='name' {...register('name')} className="input input-bordered" required />
+                                <input type="text" placeholder="Name" name='name' {...register('name')} className="input input-bordered"  />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" placeholder="email" {...register('email')} name='email' className="input input-bordered" required />
+                                <input type="email" placeholder="email" {...register('email',{required:true})} name='email' className="input input-bordered"  />
+                                {errors.email && <span className='text-red-500'>Email is required</span>}
+                                {/*apply validation part in the next and after completed project*/}
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" placeholder="password" {...register('password')} name='password' className="input input-bordered" required />
+                                <input type="password" placeholder="password" {...register('password',{required:true})} name='password' className="input input-bordered" />
+                                {errors.email && <span className='text-red-500'>password must be required</span>}
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
