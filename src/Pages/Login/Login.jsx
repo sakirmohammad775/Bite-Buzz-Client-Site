@@ -2,13 +2,14 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { LoadCanvasTemplate, loadCaptchaEnginge, validateCaptcha } from 'react-simple-captcha';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 
 const Login = () => {
-    const captchaRef=useRef(null)
+    // const captchaRef=useRef(null)
     const{signIn}=useContext(AuthContext)
-
-    const [disable,setDisable]=useState(true)
+    // const [disable,setDisable]=useState(true)
+   
     const handleLogin = event => {
         event.preventDefault()
         const form=event.target
@@ -35,6 +36,9 @@ const Login = () => {
     }
     return (
         <>
+        <Helmet>
+            <title>BiteBuzz || Login</title>
+        </Helmet>
             <div className="hero bg-base-200 min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
@@ -60,7 +64,7 @@ const Login = () => {
                                 </label>
                                 
                             </div>
-                            <div className="form-control">
+                            {/* <div className="form-control">
                                 <label className="label">
                                     <LoadCanvasTemplate></LoadCanvasTemplate>
                                 </label>
@@ -68,9 +72,10 @@ const Login = () => {
                                     name="captcha" className="input input-bordered" required />
                                 <button className='btn btn-secondary btn-xs mt-6' onClick={handleValidateCaptcha}>Validate</button>
                                 
-                            </div>
+                            </div> */}
                             <div className="form-control mt-6">
-                                <input type="submit" className='btn btn-primary' disabled={disable}  />
+                                <input type="submit" className='btn btn-primary'  /> 
+                                {/* disabled={disable}  */}
                                 <p>New Here? <Link to="/signUp">signUp</Link></p>
                             </div>
                         </form>
