@@ -1,14 +1,14 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect,  useState } from 'react';
 import { LoadCanvasTemplate, loadCaptchaEnginge, validateCaptcha } from 'react-simple-captcha';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import Swal from 'sweetalert2';
 
 
 const Login = () => {
-    // const captchaRef=useRef(null)
     const{signIn}=useContext(AuthContext)
-    // const [disable,setDisable]=useState(true)
+    const [disable,setDisable]=useState(true)
    
     const handleLogin = event => {
         event.preventDefault()
@@ -20,16 +20,21 @@ const Login = () => {
         .then(result=>{
             const user=result.user;
             console.log(user)
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Your work has been saved",
+                showConfirmButton: false,
+                timer: 1500
+              });
         })
-        .catch(error => {
-            console.error("Login failed:", error);
-        })
+        
     }
     useEffect(()=>{
         loadCaptchaEnginge(6)
     },[])
     const handleValidateCaptcha =e=>{
-        const user_Captcha_Value=captchaRef.current.value
+        const user_Captcha_Value=e.target.value
         if(validateCaptcha (user_Captcha_Value)){
             setDisable(false)
         }
@@ -67,21 +72,20 @@ const Login = () => {
                                 </label>
                                 
                             </div>
-                            {/* <div className="form-control">
+                            <div className="form-control">
                                 <label className="label">
                                     <LoadCanvasTemplate></LoadCanvasTemplate>
                                 </label>
-                                <input type="text" ref={captchaRef}
-                                    name="captcha" className="input input-bordered" required />
-                                <button className='btn btn-secondary btn-xs mt-6' onClick={handleValidateCaptcha}>Validate</button>
+                                <input type="text"
+                                    name="captcha"onBlur={handleValidateCaptcha} className="input input-bordered" required />
+                             
                                 
-                            </div> */}
+                            </div>
                             <div className="form-control mt-6">
-                                <input type="submit" className='btn btn-primary'  /> 
-                                {/* disabled={disable}  */}
-                                <p>New Here? <Link to="/signUp">signUp</Link></p>
+                                <input type="submit"  className='btn btn-primary' disabled={disable} /> 
                             </div>
                         </form>
+                                <p>New Here? <Link to="/signUp">SignUp</Link></p>
                     </div>
                 </div>
             </div>
