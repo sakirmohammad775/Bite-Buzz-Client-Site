@@ -21,6 +21,9 @@ const Login = () => {
             const user=result.user;
             console.log(user)
         })
+        .catch(error => {
+            console.error("Login failed:", error);
+        })
     }
     useEffect(()=>{
         loadCaptchaEnginge(6)
