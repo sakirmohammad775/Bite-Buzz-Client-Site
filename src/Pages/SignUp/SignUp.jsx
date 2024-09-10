@@ -3,18 +3,40 @@ import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm()
-    const {createUser}=useContext(AuthContext)
+    const { register, handleSubmit,reset, formState: { errors } } = useForm()
+    const {createUser,updateUserProfile}=useContext(AuthContext)
 
     const onSubmit = data => {
         console.log(data)
-        createUser(data.email,data.password)
-        .then(result=>{
-            const loggedUser=result.user;
-            console.log(loggedUser)
-        })
+
+             createUser(data.email, data.password)
+            .then((result) => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+
+                // Update the user's profile
+                updateUserProfile(data.name, data.photoUrl)
+                    .then(() => {
+                        console.log('User profile info updated');
+                        reset();  // Assuming reset is a form reset function
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Your profile has been updated',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    })
+                    .catch((error) => {
+                        console.error('Error updating profile:', error);
+                    });
+            })
+            .catch((error) => {
+                console.error('Error creating user:', error);
+            });
     }
     return (
         <><Helmet>
@@ -33,6 +55,12 @@ const SignUp = () => {
                                     <span className="label-text">Name</span>
                                 </label>
                                 <input type="text" placeholder="Name" name='name' {...register('name')} className="input input-bordered" />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">PhotoUrl</span>
+                                </label>
+                                <input type="text" placeholder="PhotoUrl" {...register('photo')} className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
