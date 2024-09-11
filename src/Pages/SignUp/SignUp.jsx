@@ -6,33 +6,32 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const SignUp = () => {
-    const { register, handleSubmit,reset, formState: { errors } } = useForm()
-    const {createUser,updateUserProfile}=useContext(AuthContext)
+    const { register, handleSubmit, reset, formState: { errors } } = useForm()
+    const { createUser, updateUserProfile } = useContext(AuthContext)
 
     const onSubmit = data => {
         console.log(data)
 
-             createUser(data.email, data.password)
+        createUser(data.email, data.password)
             .then((result) => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
 
-                // Update the user's profile
-                updateUserProfile(data.name, data.photoUrl)
+                // After user creation, update the profile with name and photo
+                updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        console.log('User profile info updated');
-                        reset();  // Assuming reset is a form reset function
+                        console.log('User profile updated');
+                        reset();  // Assuming reset is part of a form handler
                         Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'Your profile has been updated',
+                            position: "top-end",
+                            icon: "success",
+                            title: "Your profile has been updated",
                             showConfirmButton: false,
                             timer: 1500
                         });
+                        Navigate('/')
                     })
-                    .catch((error) => {
-                        console.error('Error updating profile:', error);
-                    });
+                    .catch(error => console.error('Error updating profile:', error));
             })
             .catch((error) => {
                 console.error('Error creating user:', error);
@@ -60,7 +59,7 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">PhotoUrl</span>
                                 </label>
-                                <input type="text" placeholder="PhotoUrl" {...register('photo')} className="input input-bordered" />
+                                <input type="text" placeholder="photoUrl" {...register('photo')} className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -81,7 +80,7 @@ const SignUp = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                            <input type='submit' value="Sign Up" className='btn btn-primary'></input>
+                                <input type='submit' value="Sign Up" className='btn btn-primary'></input>
                             </div>
                         </form>
                         <p>Already Have an account?<Link to="/login">Login</Link></p>

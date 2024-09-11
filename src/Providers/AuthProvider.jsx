@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile, } from "firebase/auth";
 import { app } from "../../firebase.config";
 
 export const AuthContext = createContext(null)
@@ -23,13 +23,20 @@ const AuthProvider = ({ children }) => {
         setLoading(true)
         return signOut(auth)
     }
+   
+    
+    // Update user profile function
     const updateUserprofile = (name, photo) => {
-        return updateProfile(auth.currentUser, {
-            displayName: name,
-            photoURL: photo
-        })
-
-    }
+        if (auth.currentUser) {
+            return updateProfile(auth.currentUser, {
+                displayName: name,
+                photoURL: photo
+            });
+        } else {
+            console.error('No authenticated user found');
+            return Promise.reject('No user');
+        }
+    };
 
 
     useEffect(() => {
