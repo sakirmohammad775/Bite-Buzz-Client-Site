@@ -2,13 +2,13 @@ import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../Providers/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm()
     const { createUser, updateUserProfile } = useContext(AuthContext)
-
+    const navigate = useNavigate()
     const onSubmit = data => {
         console.log(data)
 
@@ -29,7 +29,7 @@ const SignUp = () => {
                             showConfirmButton: false,
                             timer: 1500
                         });
-                        Navigate('/')
+                        navigate('/')
                     })
                     .catch(error => console.error('Error updating profile:', error));
             })
