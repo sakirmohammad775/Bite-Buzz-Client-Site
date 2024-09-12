@@ -82,7 +82,7 @@ const Login = () => {
                                     <LoadCanvasTemplate></LoadCanvasTemplate>
                                 </label>
                                 <input type="text"
-                                    name="captcha"onBlur={handleValidateCaptcha} className="input input-bordered" required />
+                                    name="captcha"onBlur={handleValidateCaptcha} className="input input-bordered"  />
                              
                                 
                             </div>
