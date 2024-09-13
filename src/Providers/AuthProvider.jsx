@@ -23,21 +23,14 @@ const AuthProvider = ({ children }) => {
         setLoading(true)
         return signOut(auth)
     }
-   
-    
-    // Update user profile function
-    const updateUserprofile = (name, photo) => {
-        if (auth.currentUser) {
-            return updateProfile(auth.currentUser, {
-                displayName: name,
-                photoURL: photo
-            });
-        } else {
-            console.error('No authenticated user found');
-            return Promise.reject('No user');
-        }
-    };
 
+
+    // Update user profile function
+    const updateUserProfile = (name, photo) => {
+        return updateProfile(auth.currentUser, {
+            displayName: name, photoURL: photo
+        })
+    }
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
@@ -56,7 +49,7 @@ const AuthProvider = ({ children }) => {
         createUser,
         signIn,
         logOut,
-        updateUserprofile
+        updateUserProfile
     }
 
     return (

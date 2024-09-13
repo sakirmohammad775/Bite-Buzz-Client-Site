@@ -16,26 +16,21 @@ const SignUp = () => {
             .then((result) => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-
-                // After user creation, update the profile with name and photo
-                updateUserProfile(data.name, data.photoURL)
+                updateUserProfile(data.name, data.photoUrl)
                     .then(() => {
-                        console.log('User profile updated');
-                        reset();  // Assuming reset is part of a form handler
+                        console.log('profile info updated')
+                        reset()
                         Swal.fire({
                             position: "top-end",
                             icon: "success",
-                            title: "Your profile has been updated",
+                            title: "Your work has been saved",
                             showConfirmButton: false,
                             timer: 1500
                         });
                         navigate('/')
                     })
-                    .catch(error => console.error('Error updating profile:', error));
+                    .catch(error => console.log(error))
             })
-            .catch((error) => {
-                console.error('Error creating user:', error);
-            });
     }
     return (
         <><Helmet>
@@ -59,7 +54,7 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">PhotoUrl</span>
                                 </label>
-                                <input type="text" placeholder="photoUrl" {...register('photo')} className="input input-bordered" />
+                                <input type="text" placeholder="Photo Url" {...register('photoUrl')} className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
