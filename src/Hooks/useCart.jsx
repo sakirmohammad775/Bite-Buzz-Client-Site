@@ -12,6 +12,7 @@ const useCart = () => {
         queryFn: async () => {
             const res = await axiosSecure.get('/carts ')
             return res.data
+            <h3>hello</h3>
         }
     })
     return [cart] //return as a array..so remember that destructure as a array
