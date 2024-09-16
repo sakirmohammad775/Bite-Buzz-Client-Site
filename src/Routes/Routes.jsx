@@ -5,6 +5,8 @@ import Menu from "../Pages/Menu/Menu";
 import Order from "../Pages/Order/Order"
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
+import DashboardLayout from "../MainLayout/DashboardLayout";
+import Cart from "../Pages/Dashboard/Cart/Cart";
 
 
 
@@ -35,4 +37,14 @@ export const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path:'dashboard',
+    element:<DashboardLayout></DashboardLayout>,
+   children: [
+    {
+      path:'cart',
+      element:<Cart></Cart>
+    }
+   ]
+  }
 ]);
