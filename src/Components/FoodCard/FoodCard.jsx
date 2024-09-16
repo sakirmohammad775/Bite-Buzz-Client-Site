@@ -13,6 +13,7 @@ const FoodCard = ({ item }) => {
   //careful for right pathname
   const location = useLocation()
   const axiosSecure = useAxiosSecure()
+  const [, refetch]=useCart()
   
 
   const handleAddToCart = () => {
@@ -36,7 +37,7 @@ const FoodCard = ({ item }) => {
               showConfirmButton: false,
               timer: 1500
             });
-       
+       refetch()
             //refetch cart to update the cart items count
 
 
