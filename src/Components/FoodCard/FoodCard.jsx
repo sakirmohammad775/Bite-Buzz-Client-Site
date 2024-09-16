@@ -7,43 +7,43 @@ import useCart from "../../Hooks/useCart";
 
 
 const FoodCard = ({ item }) => {
-  const {user}=useAuth()
-  const { _id,name, image, price, recipe } = item
-  const navigate=useNavigate()
+  const { user } = useAuth()
+  const { _id, name, image, price, recipe } = item
+  const navigate = useNavigate()
   //careful for right pathname
-  const location =useLocation()
-  const axiosSecure=useAxiosSecure()
-  const[cart, refetch]=useCart()
+  const location = useLocation()
+  const axiosSecure = useAxiosSecure()
+  
 
-  const handleAddToCart=()=>{
-    if(user && user.email){
+  const handleAddToCart = () => {
+    if (user && user.email) {
       //send cart item to the database
-      const cartItem={
-        menuId:_id,
-        email:user.email,
+      const cartItem = {
+        menuId: _id,
+        email: user.email,
         name,
         image,
         price
       }
-      axiosSecure.post('/carts',cartItem)
-      .then(res=>{
-        console.log(res.data)
-        if(res.data.insertedId){
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: `${name} added to your cart`,
-            showConfirmButton: false,
-            timer: 1500
-        });
-        refetch()
-        //refetch cart to update the cart items count
-        
+      axiosSecure.post('/carts', cartItem)
+        .then(res => {
+          console.log(res.data)
+          if (res.data.insertedId) {
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: `${name} added to your cart`,
+              showConfirmButton: false,
+              timer: 1500
+            });
+       
+            //refetch cart to update the cart items count
 
-        }
-      })
+
+          }
+        })
     }
-    else{
+    else {
       Swal.fire({
         title: "You are not Logged In",
         text: "Please login to add the cart?",
@@ -55,7 +55,7 @@ const FoodCard = ({ item }) => {
       }).then((result) => {
         if (result.isConfirmed) {
           //send to the login page //careful to set the pathname for login
-          navigate('/login',{state:{from:location}})
+          navigate('/login', { state: { from: location } })
         }
       });
     }
@@ -75,7 +75,7 @@ const FoodCard = ({ item }) => {
           <p>{recipe}</p>
           <div className="card-actions">
             <button className='btn btn-outline border-0 border-b-4 mt-5 text-black'
-            onClick={handleAddToCart}
+              onClick={handleAddToCart}
             >Order Now</button>
           </div>
         </div>
