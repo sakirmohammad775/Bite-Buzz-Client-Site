@@ -27,7 +27,7 @@ const SignUp = () => {
                             email:data.email
                         }
                         axiosPublic.post('/users',userInfo)
-                        then (res=>{
+                        .then (res=>{
                            
                             if(res.data.insertedId){
                                 console.log('user added to the db')
