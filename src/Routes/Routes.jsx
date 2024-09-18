@@ -7,6 +7,7 @@ import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import DashboardLayout from "../MainLayout/DashboardLayout";
 import Cart from "../Pages/Dashboard/Cart/Cart";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -39,7 +40,7 @@ export const router = createBrowserRouter([
   },
   {
     path:'dashboard',
-    element:<DashboardLayout></DashboardLayout>,
+    element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
    children: [
     {
       path:'cart',

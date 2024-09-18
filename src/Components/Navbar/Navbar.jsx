@@ -24,12 +24,13 @@ const Navbar = () => {
                  {
                     user? <h3>{user.email}</h3>:<><h3>hello</h3></>
                  }   
-                <button className="btn">
+                <Link to='dashboard/cart'><button  className="btn">
                     <FaShoppingCart>n</FaShoppingCart>
                     <div className="badge badge-secondary">
                         {cart.length}
                     </div>
                 </button>
+                </Link>
             </Link>
         </li>
 
