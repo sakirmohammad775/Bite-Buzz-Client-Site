@@ -28,8 +28,9 @@ const SignUp = () => {
                         }
                         axiosPublic.post('/users',userInfo)
                         then (res=>{
-                            console.log(res)
+                           
                             if(res.data.insertedId){
+                                console.log('user added to the db')
                                 reset()
                                 Swal.fire({
                                     position: "top-end",
