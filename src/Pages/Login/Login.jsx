@@ -4,6 +4,7 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
+import SocialLogin from '../../Components/SocialLogin/SocialLogin';
 
 
 const Login = () => {
@@ -91,8 +92,9 @@ const Login = () => {
                                 {/* toDo:using the captcha after completing project */}
                             </div>
                         </form>
-                        <p>New Here? <Link to="/signUp">SignUp</Link></p>
-                    </div>
+                        <p className='ml-8'>New Here? <Link to="/signUp">SignUp</Link></p>
+                        <SocialLogin></SocialLogin>
+                        </div>
                 </div>
             </div>
         </>

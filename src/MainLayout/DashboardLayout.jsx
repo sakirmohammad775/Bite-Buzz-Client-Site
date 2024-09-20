@@ -9,8 +9,8 @@ const DashboardLayout = () => {
     return (
         <div className="max-w-screen-xl mx-auto flex">
             {/* dashboard side bar */}
-            <div className='w-64 min-h-screen bg-orange-400 text-black'>
-                <ul className='menu p-4'>
+            <div className=' w-64 min-h-screen bg-orange-400 text-black'>
+                <ul className=' fixed menu p-4'>
                     <li><NavLink to='/dashboard/cart'><FaHome></FaHome>User Home</NavLink></li>
                     <li><NavLink to='/dashboard/reservation'><FaTowerObservation></FaTowerObservation>Reservation</NavLink></li>
                     <li><NavLink to='/dashboard/cart'><FaCartShopping></FaCartShopping> My Cart ({cart.length})</NavLink></li>
