@@ -1,14 +1,20 @@
 import React from 'react';
 import { FaGoogle } from 'react-icons/fa';
 import useAuth from '../../Hooks/useAuth';
+import useAxiosPublic from '../../Hooks/useAxiosPublic';
 
 const SocialLogin = () => {
     const { googleSignIn } = useAuth()
+    const axiosPublic = useAxiosPublic()
 
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(result => {
                 console.log(result.user)
+                const userInfo = {
+                    email: result.user?.email,
+                    name: result.user?.displayName
+                }
             })
     }
     return (
