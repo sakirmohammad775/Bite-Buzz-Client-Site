@@ -19,7 +19,7 @@ const DashboardLayout = () => {
                        <li><NavLink to='/dashboard/addItems'><FaUtensilSpoon></FaUtensilSpoon>Add Items</NavLink></li>
                        <li><NavLink to='/dashboard/manageItems'><FaList></FaList>Manage Items</NavLink></li>
                        <li><NavLink to='/dashboard/bookings'><FaBook></FaBook> Manage Bookings</NavLink></li>
-                       
+                       <li><NavLink to='/dashboard/users'><FaUsers></FaUsers> All Users</NavLink></li>
                        </>
                        :
                        <>
