@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaAd, FaBook, FaHome, FaList, FaPaypal, FaShoppingCart, FaUsers, FaUtensilSpoon, FaVoicemail } from 'react-icons/fa';
+import { FaAd, FaBook, FaHome, FaList, FaPaypal, FaShoppingCart, FaUtensilSpoon, FaVoicemail } from 'react-icons/fa';
 import { FaCartShopping, FaShop, FaTowerObservation } from 'react-icons/fa6';
 import { NavLink, Outlet } from 'react-router-dom';
 import useCart from '../Hooks/useCart';
@@ -19,7 +19,6 @@ const DashboardLayout = () => {
                        <li><NavLink to='/dashboard/addItems'><FaUtensilSpoon></FaUtensilSpoon>Add Items</NavLink></li>
                        <li><NavLink to='/dashboard/manageItems'><FaList></FaList>Manage Items</NavLink></li>
                        <li><NavLink to='/dashboard/bookings'><FaBook></FaBook> Manage Bookings</NavLink></li>
-                       <li><NavLink to='/dashboard/users'><FaUsers></FaUsers> All Users</NavLink></li>
                        </>
                        :
                        <>
