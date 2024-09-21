@@ -17,8 +17,13 @@ const SocialLogin = () => {
                     email:result.user?.email,
                     name:result.user?.displayName
                 }
+                axiosPublic.post('user updated',userInfo)
+                .then(res=>{
+                    console.log(res.data)
+                    navigate('/')
+                })
             })
-            axiosPublic.post('user updated')
+           
     }
     return (
         <div className='ml-8 mb-4'>
