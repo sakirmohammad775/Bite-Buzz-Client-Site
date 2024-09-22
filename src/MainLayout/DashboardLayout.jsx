@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaAd, FaBook, FaHome, FaList, FaPaypal, FaShoppingCart, FaUtensilSpoon, FaVoicemail } from 'react-icons/fa';
+import { FaAd, FaBook, FaHome, FaList, FaPaypal, FaUsers, FaUtensilSpoon, FaVoicemail } from 'react-icons/fa';
 import { FaCartShopping, FaShop, FaTowerObservation } from 'react-icons/fa6';
 import { NavLink, Outlet } from 'react-router-dom';
 import useCart from '../Hooks/useCart';

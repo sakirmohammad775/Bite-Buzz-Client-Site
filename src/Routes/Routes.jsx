@@ -48,7 +48,7 @@ export const router = createBrowserRouter([
       element:<Cart></Cart>
     },
     {
-      path:'allUsers',
+      path:'users',
       element:<AllUsers></AllUsers>
     }
    ]
