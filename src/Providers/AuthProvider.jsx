@@ -48,12 +48,14 @@ const AuthProvider = ({ children }) => {
             if (currentUser) {
                 //get token and store client
                 const userInfo = { email: currentUser.email }
-                axiosPublic.post('/jwt',userInfo)
-                .then(res=>{
-                    if(res.data.token){
-                        localStorage.setItem('access-token',res.data.token)
-                    }
-                })
+                console.log(userInfo)
+                axiosPublic.post('/jwt', userInfo)
+                    .then(res => {
+                        if (res.data.token) {
+                            localStorage.setItem('access-token', res.data.token)
+
+                        }
+                    })
             }
             else {
                 //todo something:remove token(if token stored in the client side:local storage,catching,in memory)
