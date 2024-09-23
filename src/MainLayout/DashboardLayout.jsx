@@ -3,11 +3,12 @@ import { FaAd, FaBook, FaHome, FaList, FaPaypal, FaUsers, FaUtensilSpoon, FaVoic
 import { FaCartShopping, FaShop, FaTowerObservation } from 'react-icons/fa6';
 import { NavLink, Outlet } from 'react-router-dom';
 import useCart from '../Hooks/useCart';
+import useAdmin from '../Hooks/useAdmin';
 
 const DashboardLayout = () => {
     const [cart] = useCart()
     //Todo:get isAdmin value from the database
-    const isAdmin = true
+    const [isAdmin] = useAdmin()
     return (
         <div className="max-w-screen-xl mx-auto flex">
             {/* dashboard side bar */}
