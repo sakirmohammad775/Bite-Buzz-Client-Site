@@ -12,10 +12,9 @@ const AllUsers = () => {
         queryFn: async () => {
             const res = await axiosSecure.get('/users',{
                 headers:{
-                    Authorization:`Token: ${localStorage.getItem('access-token')}`
+                    authorization:`Bearer ${localStorage.getItem('access-token')}`
                 }
             })
-            console.log(headers.Authorization)
             return res.data
         }
     })
