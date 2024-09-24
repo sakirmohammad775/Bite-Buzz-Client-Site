@@ -30,7 +30,7 @@ const DashboardLayout = () => {
                        <li><NavLink to='/dashboard/payment'><FaPaypal></FaPaypal> Payment History</NavLink></li>
                        <li><NavLink to='/dashboard/review'><FaAd></FaAd> Add a Review</NavLink></li>
                        <li><NavLink to='/dashboard/bookings'><FaList></FaList> My Bookings</NavLink></li>
-                       <li><NavLink to='/dashboard/users'><FaList></FaList> All Users</NavLink></li></>
+                      </>
                     }
 
                     {/* shared nav links */}
