@@ -20,15 +20,9 @@ const useAxiosSecure = () => {
     )
     // intercepts 401 and 403 status (response)
     axiosSecure.interceptors.response.use(function (response) {
-        // Any status code that lie within the range of 2xx cause this function to trigger
-        // Do something with response data
         return response;
     }, async (error) => {
-        // Any status codes that falls outside the range of 2xx cause this function to trigger
-        // Do something with response error
         const status = error.response.status
-        // console.log('status error interceptors response ', status)
-        //for 401 or 403 logout the user and move the user to the login 
         if (status === 401 || status === 403) {
             await logOut()
             navigate('/login')
