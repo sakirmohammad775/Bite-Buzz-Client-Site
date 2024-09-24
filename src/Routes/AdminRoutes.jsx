@@ -1,6 +1,8 @@
+import useAdmin from "../Hooks/useAdmin";
 
 
 const AdminRoutes = () => {
+    const [isAdmin,isAdminLoading]=useAdmin()
     return (
         <div>
             
