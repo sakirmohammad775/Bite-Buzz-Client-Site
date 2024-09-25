@@ -78,6 +78,7 @@ const FoodCard = ({ item }) => {
             <button className='btn btn-outline border-0 border-b-4 mt-5 text-black'
               onClick={handleAddToCart}
             >Order Now</button>
+            <button>Account from </button>
           </div>
         </div>
       </div>
