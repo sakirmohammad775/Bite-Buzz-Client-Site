@@ -56,7 +56,7 @@ const Cart = () => {
                             </th>
                             <th>Image</th>
                             <th>Name</th>
-                            <th>Price</th>
+                            <th>Price </th>
                             <th>Action</th>
                         </tr>
                     </thead>
