@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 
 const images = [
   {
-    src: 'https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-o6BZi9hpBuG4tjS9TTDcSZBx.png?st=2024-09-27T14%3A41%3A39Z&se=2024-09-27T16%3A41%3A39Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-09-26T23%3A05%3A41Z&ske=2024-09-27T23%3A05%3A41Z&sks=b&skv=2024-08-04&sig=ZkfokoNNDSP/Md/o7IdZxu3rLr7%2BuX3cputMHIIesc4%3D',
+    src: 'https://ibb.co.com/6RxrTNX',
     alt: 'Scenic view of a landscape with mountains and a lake',
   },
   {
-    src: 'https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-ifh3Ld9Mj3iXOJRm6WdlxmhH.png?st=2024-09-27T14%3A41%3A35Z&se=2024-09-27T16%3A41%3A35Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-09-26T23%3A16%3A49Z&ske=2024-09-27T23%3A16%3A49Z&sks=b&skv=2024-08-04&sig=MWxI4QZ2B8Y8owOGvdLxTmzR1EAct9vufAu/NnImVwQ%3D',
+    src: 'https://ibb.co.com/6RxrTNX',
     alt: 'Forest with tall trees and sunlight filtering through',
   },
   {
-    src: 'https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-NhqD9q7qGCD0MA6jyVdTWqgs.png?st=2024-09-27T14%3A41%3A32Z&se=2024-09-27T16%3A41%3A32Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-09-26T23%3A15%3A42Z&ske=2024-09-27T23%3A15%3A42Z&sks=b&skv=2024-08-04&sig=CPL3QBKxXUyWoSTDq4AuA8eT4uWTnrHLs3tvI/3wa8o%3D',
+    src: 'https://ibb.co.com/6RxrTNX',
     alt: 'Mountain range with a cloudy sky',
   },
 ];
