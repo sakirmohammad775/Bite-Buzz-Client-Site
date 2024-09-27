@@ -32,7 +32,8 @@ const Carousel = () => {
 
       <div className="relative z-10 text-white p-8">
         <h1 className="text-5xl font-bold">AUSTRALIA</h1>
-        <p className="mt-4 text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</p>
+        <p className="mt-4 text-lg">Lorem ipsum dolor,I sit amet consectetur adipisicing elit. Ab, eum!</p>
+        <p className="mt-4 text-lg">Lorem ipsum dolor,I sit amet consectetur adipisicing elit. Ab, eum!</p>
         <button className="mt-4 px-6 py-2 bg-white text-gray-900 font-semibold rounded">See More</button>
       </div>
 
