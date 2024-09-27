@@ -5,6 +5,7 @@ import Featured from "../../Pages/Home/Featured/Featured"
 import Category from "../../Pages/Home/Category/Category"
 import Testimonials from './Testimonials/Testimonials';
 import { Helmet } from 'react-helmet-async';
+import Carousel from '../Carousel/Carousel';
 const Home = () => {
     return (
         <>
@@ -13,6 +14,7 @@ const Home = () => {
         </Helmet>
         <Banner></Banner>
         <Category></Category>
+        <Carousel></Carousel>
         <PopularMenu></PopularMenu>
         <Featured></Featured>
         <Testimonials></Testimonials>
