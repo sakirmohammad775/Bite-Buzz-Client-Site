@@ -27,7 +27,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative h-screen flex items-center justify-center">
+    <div className="relative h-screen flex items-center justify-center ">
       <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('https://placehold.co/800x600')` }}></div>
 
       <div className="relative z-10 text-white p-8">

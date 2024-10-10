@@ -43,9 +43,15 @@ export const router = createBrowserRouter([
     path:'dashboard',
     element:<PrivateRoute ><DashboardLayout></DashboardLayout></PrivateRoute>,
    children: [
+    //Normal users Routes
     {
       path:'cart',
       element:<Cart></Cart>
+    },
+    //only Admin Users Routes
+    {
+      path:'addItems',
+      element:<AddItems></AddItems>,
     },
     {
       path:'users',
