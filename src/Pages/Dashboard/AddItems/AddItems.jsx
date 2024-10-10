@@ -22,9 +22,7 @@ const AddItems = () => {
                     <div className='grid grid-cols-2 w-full'>
                         <div>
                             {/* Category */}
-                            <label className="label">
-                                <span className="label-text">Category</span>
-                            </label>
+                            
                             <select {...register("category")} className="select select-bordered w-full" >
                                 <option disabled selected>Category</option>
                                 <option value="pizza">Pizza</option>
