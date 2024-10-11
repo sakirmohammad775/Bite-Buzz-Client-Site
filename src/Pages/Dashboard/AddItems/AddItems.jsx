@@ -2,13 +2,18 @@ import React from 'react';
 import SectionTitle from '../../../Components/SectionTitle/SectionTitle';
 import { useForm } from 'react-hook-form';
 import { FaUtensils } from 'react-icons/fa';
+import useAxiosPublic from '../../../Hooks/useAxiosPublic';
  
 //set up the imgbb  api from the website and set the VITE _API_KEY
 const image_hosting_key=import.meta.env.VITE_IMAGE_HOSTING_KEY;
+const image_hosting_api=`https://api.imgbb.com/1/upload?key=${image_hosting_key}`
 const AddItems = () => {
     const { register, handleSubmit } = useForm()
-    const onSubmit = (data) =>
+    const axiosPublic=useAxiosPublic()
+    const onSubmit = (data) =>{
         console.log(data)
+        //image upload to imgbb and then get an url
+    }
     return (
         <div>
             <SectionTitle heading="add an item" subHeading="What's new?"></SectionTitle>
@@ -17,7 +22,6 @@ const AddItems = () => {
                     <div className="form-control w-full ">
                         <label className="label">
                             <span className="label-text">Recipe Name</span>
-                        </label>
                         <input type="text" placeholder="Recipe Name"
                             {...register('name',{required:true})}  className="input input-bordered w-full" />
                     </div>
