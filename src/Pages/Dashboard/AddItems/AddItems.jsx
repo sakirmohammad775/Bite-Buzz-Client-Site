@@ -2,7 +2,9 @@ import React from 'react';
 import SectionTitle from '../../../Components/SectionTitle/SectionTitle';
 import { useForm } from 'react-hook-form';
 import { FaUtensils } from 'react-icons/fa';
-
+ 
+//set up the imgbb  api from the website and set the VITE _API_KEY
+const image_hosting_key=import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const AddItems = () => {
     const { register, handleSubmit } = useForm()
     const onSubmit = (data) =>
@@ -35,6 +37,7 @@ const AddItems = () => {
                             </select>
                         </div>
                         {/* price */}
+                        
                         <div>
                             <label className="label">
                                 <span className="label-text">Price*</span>
