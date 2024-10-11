@@ -20,7 +20,9 @@ const AddItems = () => {
             <div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-control w-full ">
-                      
+                        <label className="label">
+                            <span className="label-text">Recipe Name</span>
+                        </label>
                         <input type="text" placeholder="Recipe Name"
                             {...register('name',{required:true})}  className="input input-bordered w-full" />
                     </div>
