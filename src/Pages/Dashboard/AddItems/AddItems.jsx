@@ -25,8 +25,8 @@ const AddItems = () => {
                             <label className="label">
                                 <span className="label-text">Category</span>
                             </label>
-                            <select {...register("category")} className="select select-bordered w-full" >
-                                <option disabled selected>Category</option>
+                            <select defaultValue="default" {...register("category")} className="select select-bordered w-full" >
+                                <option disabled value="default">Category</option>
                                 <option value="pizza">Pizza</option>
                                 <option value="salad">Salad</option>
                                 <option value="soup">Soup</option>
