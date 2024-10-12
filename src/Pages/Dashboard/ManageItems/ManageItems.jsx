@@ -4,9 +4,10 @@ import UseMenu from '../../../Hooks/UseMenu';
 import { FaEdit, FaTrashAlt, FaUser } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../Hooks/useAxiosSecure';
+import { Link } from 'react-router-dom';
 
 const ManageItems = () => {
-    const [menu] = UseMenu()
+    const [menu,loading,refetch] = UseMenu()
     const axiosSecure=useAxiosSecure()
     const handleDeleteItem=(item)=>{
         Swal.fire({
@@ -23,7 +24,8 @@ const ManageItems = () => {
                 // console.log(res.data)
                 
                         if (res.data.deletedCount > 0) {
-                            //refetch the menu
+                            //refetch the update the ui
+                            refetch()
                             Swal.fire({
                                 position:"top-end",
                                 icon:"Success",
@@ -74,7 +76,9 @@ const ManageItems = () => {
                                     <td>{item.name}</td>
                                     <td>{item.price}</td>
                                     <td>
+                                    <Link to={`/dashboard/updateItems/${item._id}`}>
                                     <button className="btn bg-orange-500 btn-sm"><FaEdit className="text-white font-2xl"></FaEdit></button>
+                                    </Link>
                                     </td>
                                     <td> <button onClick={() => handleDeleteItem(item)} className="btn btn-ghost btn-sm"><FaTrashAlt className="text-red-500"></FaTrashAlt></button></td>
 
