@@ -84,7 +84,7 @@ const AddItems = () => {
                                     <span className="label-text">Price*</span>
                                 </label>
                                 <select {...register("price")} className="select select-bordered w-full" >
-                                    <option disabled selected>Category</option>
+                                    <option disabled >Category</option>
                                     <option value="pizza">Pizza</option>
                                     <option value="salad">Salad</option>
                                     <option value="soup">Soup</option>
